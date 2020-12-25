@@ -1,4 +1,4 @@
-<h1><pre>                 WHAT'S THE ERROR                     </pre></h1>
+<h1><pre>               WHAT'S THE ERROR                   </pre></h1>
 
 <p align="center">
     Text comes here
