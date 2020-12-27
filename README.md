@@ -1,11 +1,16 @@
 <h1><pre>                 WHAT'S THE ERROR                 </pre></h1>
 
 <p align="center">
+    Made With Python Creative Commons PyCharm
+</p>
+
+<p align="center">
     <em>A handy tool that reads the errors in our code for us and searches them on Stack Overflow for us.</em>
 </p>
 
 <p align="center">
     <strong>Languages Supported :</strong>
+    Python Badge
 </p>
 
 ### Setup guidelines :
@@ -25,5 +30,5 @@
    ```
 
 
-<pre> Author : <strong>Kartik Gupta</strong></pre>
+<pre> Author : <strong>Kartik Gupta</strong> Github Profile</pre>
 
