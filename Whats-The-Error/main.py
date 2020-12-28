@@ -6,12 +6,15 @@ print("______________________________________")
 print(" Welcome to Whats-The-Error Client ...")
 print("______________________________________")
 
+print("Enter file name ..")
 checkFileName = input().lower()
 
 temp = checkFileName.split(".")
 extensionName = temp[len(temp) - 1]
 
-languages = ["py"]
+languages = ["py", "c", "cpp"]
+languageCode = -1
+errorFindMethodCode = -1
 language = "Not Defined"
 
 if extensionName not in languages:
@@ -19,31 +22,60 @@ if extensionName not in languages:
     exit()
 
 if extensionName == languages[0]:
+    languageCode = 0
     language = "Python"
+    errorFindMethodCode = 0
+
+elif extensionName == languages[1]:
+    languageCode = 1
+    language = "C"
+    errorFindMethodCode = 1
+
+elif extensionName == languages[2]:
+    languageCode = 2
+    language = "C++"
+    errorFindMethodCode = 1
 
 print("______________________________________")
 
-ProgramExecutionProcess = Popen(["python", checkFileName], stdout=PIPE, stderr=PIPE)
+execCommand = ["python " + checkFileName,
+               "gcc " + checkFileName + " -o" + checkFileName[:checkFileName.rfind(".")] + ".exe",
+               "g++ " + checkFileName + " -o" + checkFileName[:checkFileName.rfind(".")] + ".exe"]
+
+ProgramExecutionProcess = Popen(execCommand[languageCode].split(), stdout=PIPE, stderr=PIPE)
 
 stdout, stderr = ProgramExecutionProcess.communicate()
 
 errorText = stderr.decode("UTF-8")
 
-errorClass = errorText[errorText[: errorText.rfind("Error")].rfind(" "): errorText.rfind("Error")].split()[1]
-errorClass = errorClass + str("Error")
+if len(errorText) == 0:
+    print("No Errors Found")
+    exit(0)
 
-errorMessage = errorText[errorText.rfind(errorClass):]
+if errorFindMethodCode == 0:
+    errorClass = errorText[errorText[: errorText.rfind("Error")].rfind(" "): errorText.rfind("Error")].split()[1]
+    errorClass = errorClass + str("Error")
+    errorMessage = errorText[errorText.rfind(errorClass):]
 
-print("Error Type        : " + errorClass)
-print("Error Description : " + errorMessage)
+    print("Error Type        : " + errorClass)
+    print("Error Description : " + errorMessage)
+
+elif errorFindMethodCode == 1:
+    # Under development
+    print(errorText)
+    exit()
 
 baseURL = "https://api.stackexchange.com"
 searchURL = "/2.2/search"
 
 query = {"order": "desc", "sort": "activity", "tagged": language, "intitle": errorClass, "site": "stackoverflow"}
 
+print("Fetching data ..")
+
 getDataRequest = get(f"{baseURL}{searchURL}", params=query)
 JSONResponse = getDataRequest.json()
+
+print("Opening web links ...")
 
 count = 0
 for item in JSONResponse["items"]:

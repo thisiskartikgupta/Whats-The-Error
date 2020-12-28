@@ -1,1 +1,3 @@
-print(5+ "string")
+# These check files are for testing purposes only
+
+print(5/2)
