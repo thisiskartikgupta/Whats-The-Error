@@ -19,7 +19,9 @@
 
 <p align="center">
     <strong>Languages Supported :</strong>
-    <img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Languages/Python/logo_python.svg" alt="Python" />
+    <a href="https://www.python.org/">
+        <img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Languages/Python/logo_python.svg" alt="Python" />
+    </a>
 </p>
 
 ### Setup guidelines :
@@ -40,6 +42,6 @@
 
 
 <pre>
-                                        <strong>Kartik Gupta</strong> <a href="https://www.github.com/thisiskartkgupta"><img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Sites/GitHub/logo_github.svg" alt="Github"/></a>
+                                        <strong>Kartik Gupta</strong> <a href="https://www.github.com/thisiskartikgupta"><img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Sites/GitHub/logo_github.svg" alt="Github"/></a>
 </pre>
 
