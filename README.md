@@ -40,7 +40,6 @@
 
 
 <pre>
-                                        <strong>Kartik Gupta</strong><a href="https://www.github.com/thisiskartkgupta">
-                                        <img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Sites/GitHub/logo_github.svg" alt="Github"/></a>
+                                        <strong>Kartik Gupta</strong><a href="https://www.github.com/thisiskartkgupta"><img src="https://github.com/thisiskartikgupta/Markdown_Host/blob/main/badges/Sites/GitHub/logo_github.svg" alt="Github"/></a>
 </pre>
 
